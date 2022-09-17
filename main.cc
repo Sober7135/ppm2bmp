@@ -1,9 +1,9 @@
 #include "ppm2bmp.h"
-#include <cstdio>
 
-int main() {
-  // printf("hello");
-  bmp b{"test.ppm", "test.bmp"};
-  // printf("%d", __LINE__);
+int main(int argc, char *argv[]) {
+  if (argc != 3) {
+    exit(1);
+  }
+  bmp b{argv[1], argv[2]};
   b.write();
 }
